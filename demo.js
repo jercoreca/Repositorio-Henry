@@ -93,3 +93,13 @@ for(comida of comidas) {
 // for(i = 0; i < comidas.length; i++) {
 //     console.log(comidas[i]);
 // }
+
+
+
+
+
+//OBJETOS: 
+
+var objetoNuevo = { }
+
+delete usuario.nombre
