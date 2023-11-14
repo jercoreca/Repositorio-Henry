@@ -6,13 +6,56 @@ class Persona {
    // Debe tener las propiedades: "nombre", "apellido", "edad" y "domicilio".
    // Debe tener un método llamado "detalle" que nos devuelva un objeto con las propiedades de la persona y
    // sus valores.
+  constructor(nombre, apellido, edad, domicilio) {
+      this.nombre = nombre; 
+      this.apellido = apellido; 
+      this.edad = edad; 
+      this.domicilio = domicilio;
+      this.detalle = function() {
+         return {
+            nombre: this.nombre,
+            apellido: this.apellido,
+            edad: this.edad,
+            domicilio: this.domicilio 
+         }
+      }
+   }
 }
+
+// EJ ejercicio: 
+// persona1 = new Persona("joaquin", "Erco", 29, "calle 123")
+
+// persona1.nombre // --> "joaquin"
+// persona1.edad // --> 29
+// persona.detalle() // > nombre: joaquin, Apellido: Erco etc ...
+
+//PUEDE ESTAR POR FUERA DEL CONSTRUCTOR 
+// class Persona {
+// constructor(nombre, apellido, edad, domicilio) {
+//    this.nombre = nombre; 
+//    this.apellido = apellido; 
+//    this.edad = edad; 
+//    this.domicilio = domicilio;
+// }
+// detalle() {
+//    return {
+//       nombre: this.nombre,
+//       apellido: this.apellido,
+//       edad: this.edad,
+//       domicilio: this.domicilio 
+//    }
+// }
+// }
+
 
 function crearInstanciaPersona(nombre, apellido, edad, domicilio) {
    // En este ejercicio debes crear una instancia de la clase construida en el ejercicio anterior.
    // Recibirás las propiedades por parámetro.
    // Retornar la instancia creada.
    // Tu código:
+   var persona1 = new Persona (nombre, apellido, edad, domicilio)
+   return persona1;
+
 }
 
 function agregarMetodo() {
@@ -20,6 +63,10 @@ function agregarMetodo() {
    // Este método toma la propiedad "nombre" y "edad", y devuelve el string:
    // Ejemplo: "Juan, 22 años".
    // Tu código:
+   Persona.prototype.datos = function() {
+      return `${this.nombre}, ${this.edad} años`
+      // return this.nombre + ", " + this.edad + " años"
+   }
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
